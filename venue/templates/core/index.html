@@ -1,0 +1,147 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="travel, planning, book, trips" />
+  <meta name="description" content="Triship - Your Ultimate Travel Planning Companion." />
+  <meta name="author" content="Your Name" />
+
+  <title>Triship - Your Travel Planning Companion</title>
+
+  <!-- Slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+  <!-- Bootstrap core CSS -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+
+  <!-- Fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700|Poppins:400,500,700&display=swap" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/style.css' %}" rel="stylesheet" />
+  <link href="{% static 'css/responsive.css' %}" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="hero_area">
+    <!-- Header section -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container">
+          <div class="fk_width" id="">
+            <div class="custom_menu-btn">
+              <button onclick="openNav()">
+                <span class="s-1"> </span>
+                <span class="s-2"> </span>
+                <span class="s-3"> </span>
+              </button>
+            </div>
+          </div>
+          <a class="navbar-brand" href="{% url 'index' %}">
+            <img src="{% static 'images/logo.png' %}" alt="Triship Logo" />
+          </a>
+          <div class="user_option">
+            <a href="#">
+              <img src="{% static 'images/user-icon.png' %}" alt="User Icon" />
+            </a>
+            <form class="form-inline my-2 my-lg-0  mb-3 mb-lg-0">
+              <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+            </form>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- End header section -->
+
+    <!-- Slider section -->
+    <section class="slider_section position-relative">
+      <div class="detail-box">
+        <div class="row">
+          <div class="col-md-8 col-lg-6 mx-auto">
+            <h1>
+              Plan Your Trip <br />
+              With Triship
+            </h1>
+            <p>
+              Your ultimate travel planning companion. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+            </p>
+            <div>
+              <a href="#">
+                Start Planning Now
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="img-box">
+        <img src="{% static 'images/slider-img.png' %}" class="slider-img" alt="Slider Image" />
+      </div>
+    </section>
+    <!-- End Slider section -->
+
+    <!-- Book section -->
+    <section class="book_section">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <div class="heading_container">
+              <h2>
+                Book Your Trip Now
+              </h2>
+              <p>
+                Ready to plan your next adventure? Fill out the form below to start booking your trip with Triship.
+              </p>
+            </div>
+            <form>
+              <div class="form-row">
+                <div class="form-group col-lg-4">
+                  <label for="inputDestination">Destination</label>
+                  <input type="text" class="form-control" id="inputDestination" placeholder="Enter Destination">
+                </div>
+                <div class="form-group col-lg-4">
+                  <label for="inputFromDate">From Date</label>
+                  <input type="date" class="form-control" id="inputFromDate">
+                </div>
+                <div class="form-group col-lg-4">
+                  <label for="inputToDate">To Date</label>
+                  <input type="date" class="form-control" id="inputToDate">
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-lg-4">
+                  <label for="inputEmail">Email</label>
+                  <input type="email" class="form-control" id="inputEmail" placeholder="Enter your email">
+                </div>
+                <div class="form-group col-lg-4">
+                  <label for="inputPhone">Phone Number</label>
+                  <input type="text" class="form-control" id="inputPhone" placeholder="Enter your phone number">
+                </div>
+                <div class="form-group col-lg-4">
+                  <label for="inputBudget">Budget</label>
+                  <input type="text" class="form-control" id="inputBudget" placeholder="Enter your budget">
+                </div>
+              </div>
+              <div class="d-flex justify-content-center">
+                <button type="submit" class="btn btn-primary">Start Planning</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- End Book section -->
+
+    <script type="text/javascript" src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/bootstrap.js' %}"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
+  </body>
+
+</html>

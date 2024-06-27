@@ -2,7 +2,7 @@ from django.shortcuts import redirect, render
 from core.models import CustomUser
 from django.contrib import messages
 import re
-
+from django.contrib.auth import authenticate, login
 
 
 def user_inteface(request):
@@ -10,7 +10,28 @@ def user_inteface(request):
 
 
 def user_login(request):
-    return render(request,'registration/login.html')
+    if request.method == "POST":
+        email = request.POST.get("email")
+        password = request.POST.get("password")
+
+        # Check if user with the provided email exists
+        try:
+            user = User.objects.get(email=email)
+        except User.DoesNotExist:
+            messages.error(request, 'No user with this email found.')
+            return render(request, 'registration/login.html')
+
+        # Authenticate user
+        user = authenticate(request, username=user.username, password=password)
+        if user is not None:
+            login(request, user)
+            messages.success(request, 'Login successful.')
+            return redirect('home')  # Adjust to your desired redirect URL
+        else:
+            messages.error(request, 'Invalid email or password.')
+            return render(request, 'registration/login.html')
+
+    return render(request, 'registration/login.html')
 
 def user_register(request):
     if request.method == 'POST':

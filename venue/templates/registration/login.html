@@ -1,4 +1,6 @@
 {% load static %}
+{% load socialaccount %}
+{% load account %}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -51,10 +53,10 @@
                 <header>Sign In</header>
             </div>
 
-            <form method="post" action="#">
+            <form method="post" action="{%url 'user_login' %}">
                 {% csrf_token %}
                 <div class="input-field">
-                    <input type="text" class="input" name="username" placeholder="Username" required>
+                    <input type="text" class="input" name="email" placeholder="Username" required>
                     <i class="bx bx-user"></i>
                 </div>
                 <div class="input-field">
@@ -78,9 +80,10 @@
             <a href="{% url 'user_register' %}"><span>Don't have an account? Register</a></span>
 
             <!-- Google Sign-in Button -->
-            <button type="button" class="login-with-google-btn">
+            {% load socialaccount %}
+            <button type="button" class="login-with-google-btn" onclick="window.location.href='{% url 'social:begin' 'google-oauth2' %}'">
                 Sign in with Google
-            </button>
+            </button>          
         </div>
     </div>
 </body>

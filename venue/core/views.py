@@ -3,33 +3,34 @@ from core.models import CustomUser
 from django.contrib import messages
 import re
 from django.contrib.auth import authenticate, login
+from django.contrib.auth import get_user_model
 
 
 def user_inteface(request):
     return render(request,"core/index.html")
 
 
+CustomUser = get_user_model()
+
 def user_login(request):
     if request.method == "POST":
         email = request.POST.get("email")
         password = request.POST.get("password")
 
-        # Check if user with the provided email exists
-        try:
-            user = User.objects.get(email=email)
-        except User.DoesNotExist:
-            messages.error(request, 'No user with this email found.')
-            return render(request, 'registration/login.html')
+        print(email)
 
-        # Authenticate user
-        user = authenticate(request, username=user.username, password=password)
+        # Authenticate user using email and password
+        user = authenticate(request, email=email, password=password)
+        
         if user is not None:
-            login(request, user)
-            messages.success(request, 'Login successful.')
-            return redirect('home')  # Adjust to your desired redirect URL
+            if user.is_active:
+                login(request, user)
+                messages.success(request, 'Login successful.')
+                return redirect('user_interface')  # Adjust to your desired redirect URL
+            else:
+                messages.error(request, 'This account is inactive.')
         else:
             messages.error(request, 'Invalid email or password.')
-            return render(request, 'registration/login.html')
 
     return render(request, 'registration/login.html')
 

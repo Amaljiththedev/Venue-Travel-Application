@@ -49,14 +49,13 @@
     <div class="box">
         <div class="container">
             <div class="top-header">
-                <span>Don't have an account?</span>
-                <header>Register</header>
+                <header>Sign Up</header>
             </div>
 
-            <form action="{% url 'register' %}" method="post">
+            <form action="{% url 'user_register' %}" method="post">
                 {% csrf_token %}
                 <div class="input-field">
-                    <input type="text" class="input" placeholder="Username" name="username" required>
+                    <input type="text" class="input" placeholder="Name" name="name" required>
                     <i class="bx bx-user"></i>
                 </div>
                 <div class="input-field">
@@ -75,7 +74,7 @@
                     <input type="submit" class="submit" value="Register">
                 </div>
             </form>
-            <p></p>
+            <a href="{% url 'user_login' %}"><span>Do you have an account? login</a></span>
             <!-- Google Sign-in Button -->
             <button type="button" class="login-with-google-btn">
                 Sign in with Google

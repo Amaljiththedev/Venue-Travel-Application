@@ -44,11 +44,11 @@
               </button>
             </div>
           </div>
-          <a class="navbar-brand" href="{% url 'index' %}">
+          <a class="navbar-brand" href="#">
             <img src="{% static 'images/logo.png' %}" alt="Triship Logo" />
           </a>
           <div class="user_option">
-            <a href="#">
+            <a href="{% url 'user_login' %}">
               <img src="{% static 'images/user-icon.png' %}" alt="User Icon" />
             </a>
             <form class="form-inline my-2 my-lg-0  mb-3 mb-lg-0">

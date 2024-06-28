@@ -69,7 +69,11 @@ def user_register(request):
         messages.success(request, 'Registration successful.')
         return redirect('user_login')  # Adjust to your login URL
 
+<<<<<<< HEAD
     return render(request, 'registration/register.html')
 
 def recommendation(request):
     return render(request, 'core/recommandation.html')
+=======
+    return render(request, 'registration/register.html')
+>>>>>>> origin/main

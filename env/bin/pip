@@ -1,4 +1,10 @@
+<<<<<<< HEAD
 #!/Users/amaljithta/Documents/Project/env/bin/python3.12
+=======
+#!/bin/sh
+'''exec' "/Users/amaljithta/Venue Travel app/env/bin/python3.12" "$0" "$@"
+' '''
+>>>>>>> origin/main
 # -*- coding: utf-8 -*-
 import re
 import sys

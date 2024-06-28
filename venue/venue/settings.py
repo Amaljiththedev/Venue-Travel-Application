@@ -110,6 +110,17 @@ LOGOUT_REDIRECT_URL = 'user_interface'
 env_path = Path('.') / '.env'
 load_dotenv(dotenv_path=env_path)
 
+<<<<<<< HEAD
+=======
+# Set Google OAuth credentials
+# SOCIAL_AUTH_GOOGLE_OAUTH2_KEY = '338033424517-v5n8vq7rovaogqc1q4e95pfapjkfqk85.apps.googleusercontent.com'
+# SOCIAL_AUTH_GOOGLE_OAUTH2_SECRET = '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'
+
+
+
+
+# Load environment variables from .env file
+>>>>>>> origin/main
 env_path = Path('.') / '.env'
 load_dotenv(dotenv_path=env_path)
 
